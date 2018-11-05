@@ -1,6 +1,6 @@
 {
   "appsettings": {
-    "kataDataUrl": "http://codekata.com/data/19/",
+    "kataDataUrl": "http://codekata.com/data/",
     "words": "wordlist.txt",
     "filePath": "C:\\Projects\\Katas\\CodeKata.com\\Kata19WordChain\\Data"
   }

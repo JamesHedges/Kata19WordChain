@@ -11,14 +11,21 @@ namespace KataDataLoader
     {
         private async Task<Stream> GetHttpStreamAsync(string baseUrl, string fileName)
         {
-            HttpClient client;
-            client = new HttpClient()
+            try
             {
-                BaseAddress = new Uri(baseUrl)
-            };
+                HttpClient client;
+                client = new HttpClient()
+                {
+                    BaseAddress = new Uri(baseUrl)
+                };
 
-            var response = await client.GetStreamAsync(fileName);
-            return response;
+                var response = await client.GetStreamAsync(fileName);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public async Task<LoadTestDataResponse> Handle(LoadTestDataCommand request, CancellationToken cancellationToken)

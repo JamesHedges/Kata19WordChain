@@ -19,7 +19,7 @@ namespace WordChain
             services.Scan(scan =>
             {
                 scan
-                    .FromAssembliesOf(typeof(IMediator), typeof(IWordChainConfiguration))
+                    .FromAssembliesOf(typeof(IMediator), typeof(IWordChainConfiguration), typeof(KataDataLoader.LoadTestDataCommand))
                     .AddClasses(true)
                     .AsImplementedInterfaces();
             });

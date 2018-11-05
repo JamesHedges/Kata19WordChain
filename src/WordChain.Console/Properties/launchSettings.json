@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WordChain.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "loaddata"
+    }
+  }
+}
