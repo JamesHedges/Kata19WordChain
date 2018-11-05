@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using McMaster.Extensions.CommandLineUtils;
 using KataDataLoader;
+using WordChain.Commands;
 
 namespace WordChain
 {
@@ -23,6 +24,13 @@ namespace WordChain
         [Argument(0, "Command To Execute", "Command")]
         public string Command { get; set; }
 
+        [Option("-S|--Start")]
+        public string StartWord { get; set; }
+
+        [Option("-E|--EndWord")]
+        public string EndWord { get; set; }
+
+
         public async Task OnExecute()
         {
             switch (Command.ToLower())
@@ -37,6 +45,7 @@ namespace WordChain
                     _logger.LogInformation("File Downloaded");
                     break;
                 case "wordchain":
+                    await _mediator.Send(new WordChainCommand { Start = StartWord, End = EndWord });
                     break;
                 default:
                     _logger.LogError($"Invalid Command: {Command}");
