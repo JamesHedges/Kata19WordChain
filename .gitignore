@@ -51,6 +51,8 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 
+# Data Files
+[Dd]ata/
 
 #############
 ## Windows detritus
@@ -62,6 +64,3 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
-
-# Data Files
-[Dd]ata/
